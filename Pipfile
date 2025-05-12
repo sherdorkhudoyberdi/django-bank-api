@@ -20,6 +20,7 @@ django-celery-email = "==3.0.0"
 django-celery-beat = "==2.8.0"
 cloudinary = "==1.44.0"
 psycopg2-binary = "==2.9.10"
+loguru = "==0.7.2"
 
 [dev-packages]
 watchfiles = "==0.22.0"
