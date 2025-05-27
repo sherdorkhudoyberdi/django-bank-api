@@ -11,6 +11,9 @@ services:
             - postgres
             - mailpit
         command: /start.sh
+        volumes:
+            - ./core_apps:/app/core_apps
+            - ./config:/app/config
         networks:
             - banker_local_nw
     postgres:
