@@ -32,4 +32,4 @@ END
 
 echo >&2 'PostgreSQL is available'
 
-exec /start.sh "$@"
+exec "$@"
