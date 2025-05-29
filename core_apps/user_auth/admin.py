@@ -72,6 +72,35 @@ class CustomUserAdmin(UserAdmin):
             },
         ),
     )
+    add_fieldsets = (
+        (
+            _("Login Credentials"),
+            {
+                "fields": (
+                    "email",
+                    "password1",
+                    "password2",
+                )
+            },
+        ),
+        (
+            _("Personal Information"),
+            {"fields": ("first_name", "middle_name", "last_name", "id_no", "role")},
+        ),
+        (
+            _("Security"),
+            {"fields": ("security_question", "security_answer")},
+        ),
+        (
+            _("Permissions"),
+            {
+                "fields": (
+                    "is_staff",
+                    "is_superuser",
+                )
+            },
+        ),
+    )
     search_fields = ["email", "username", "first_name", "last_name"]
     ordering = ["email"]
 
