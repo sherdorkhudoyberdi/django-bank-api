@@ -6,6 +6,7 @@ services:
         volumes:
             - ./core_apps:/app/core_apps
             - ./config:/app/config
+            - ./logs:/app/logs
 #        ports:
 #             - "8001:8000"
         expose:
