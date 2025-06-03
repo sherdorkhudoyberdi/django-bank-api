@@ -4,11 +4,20 @@ build:
 up:
 	docker compose -f local.yml up -d
 
+# SAFE: Stops containers without removing volumes (preserves data)
 down:
 	docker compose -f local.yml down
 
+# DANGEROUS: Removes all data. Only use when you want to completely reset the database
 down-v:
-	docker compose -f local.yml down -v
+	@echo "WARNING: This will delete all your data!"
+	@echo "Are you sure you want to continue? [y/N]"
+	@read -p " " answer; \
+	if [ "$$answer" = "y" ]; then \
+		docker compose -f local.yml down -v; \
+	else \
+		echo "Operation cancelled"; \
+	fi
 
 banker-config:
 	docker compose -f local.yml config
