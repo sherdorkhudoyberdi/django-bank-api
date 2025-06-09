@@ -23,7 +23,7 @@ banker-config:
 	docker compose -f local.yml config
 
 makemigrations:
-	docker compose -f local.yml run --rm --entrypoint python api manage.py makemigrations
+	docker compose -f local.yml run --rm --user $(id -u):$(id -g) api python manage.py makemigrations
 
 migrate:
 	docker compose -f local.yml run --rm api python manage.py migrate
